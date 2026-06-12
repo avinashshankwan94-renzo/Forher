@@ -1,2 +1,336 @@
-# Forher
-.. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Place For You</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+}
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+0%,100%{opacity:.2}
+50%{opacity:1}
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
+background:linear-gradient(to right,#60a5fa,#c084fc);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.typewriter{
+font-size:1.2rem;
+max-width:700px;
+line-height:1.8;
+}
+
+.scroll{
+margin-top:40px;
+animation:bounce 2s infinite;
+font-size:2rem;
+}
+
+@keyframes bounce{
+50%{transform:translateY(10px)}
+}
+
+.section{
+padding:80px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.title{
+text-align:center;
+font-size:2rem;
+margin-bottom:40px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:20px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.quote-box{
+text-align:center;
+padding:40px;
+background:rgba(255,255,255,.08);
+border-radius:20px;
+}
+
+.quote{
+font-size:1.4rem;
+margin-bottom:20px;
+}
+
+button{
+padding:14px 25px;
+border:none;
+border-radius:30px;
+background:#60a5fa;
+color:white;
+font-size:1rem;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.message{
+margin-top:20px;
+font-size:1.1rem;
+min-height:40px;
+}
+
+.letters{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.letter{
+background:rgba(255,255,255,.08);
+padding:25px;
+border-radius:20px;
+cursor:pointer;
+transition:.3s;
+}
+
+.letter:hover{
+transform:scale(1.03);
+}
+
+.hidden{
+display:none;
+margin-top:15px;
+color:#dbeafe;
+}
+
+.footer{
+text-align:center;
+padding:70px 20px;
+}
+
+.final{
+font-size:1.3rem;
+max-width:700px;
+margin:auto;
+line-height:1.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<section class="hero">
+<h1>Hey You 🌙</h1>
+
+<p class="typewriter" id="typing"></p>
+
+<div class="scroll">↓</div>
+</section>
+
+<section class="section">
+<h2 class="title">Things You Should Never Forget</h2>
+
+<div class="cards">
+<div class="card">
+✨ You are stronger than the thoughts trying to convince you otherwise.
+</div>
+
+<div class="card">
+🌸 Even on your worst days, you still matter.
+</div>
+
+<div class="card">
+☀️ The world feels different because you're in it.
+</div>
+
+<div class="card">
+🦋 You don't need to be perfect to be loved and appreciated.
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="quote-box">
+<p class="quote" id="quote">
+Click below whenever life feels heavy.
+</p>
+
+<button onclick="newMessage()">
+Give Me A Reason To Smile
+</button>
+
+<div class="message" id="message"></div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">Open When...</h2>
+
+<div class="letters">
+
+<div class="letter" onclick="toggle(this)">
+💙 Open When You're Sad
+<div class="hidden">
+You're allowed to feel tired. You're allowed to cry. But please remember that this moment isn't forever.
+</div>
+</div>
+
+<div class="letter" onclick="toggle(this)">
+🌧 Open When You Feel Alone
+<div class="hidden">
+There are people who care about you more than you realize. Including the person who made this page.
+</div>
+</div>
+
+<div class="letter" onclick="toggle(this)">
+🌙 Open When You Doubt Yourself
+<div class="hidden">
+You've overcome challenges before. You have more strength inside you than you give yourself credit for.
+</div>
+</div>
+
+<div class="letter" onclick="toggle(this)">
+☀️ Open When You Need Hope
+<div class="hidden">
+Some of the best chapters of your life haven't happened yet.
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="footer">
+<div class="final">
+No matter what kind of day you're having, I hope you remember this:
+
+<br><br>
+
+You don't have to carry everything alone.
+You don't have to be okay all the time.
+And you don't have to earn your worth.
+
+<br><br>
+
+You are already enough.
+
+💙
+</div>
+</section>
+
+<script>
+
+const text =
+"This page exists for one reason: to remind you that even when life feels overwhelming, there is still light ahead. Take a breath, stay a little, and remember how amazing you truly are.";
+
+let i=0;
+
+function typeWriter(){
+if(i<text.length){
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter,35);
+}
+}
+typeWriter();
+
+const messages=[
+"You're doing better than you think.",
+"One bad day doesn't mean a bad life.",
+"You have survived every difficult day so far.",
+"The future version of you is proud you kept going.",
+"You are someone's favorite person.",
+"Your smile has probably saved more days than you know.",
+"The storm isn't permanent.",
+"You're stronger than this moment."
+];
+
+function newMessage(){
+const random = messages[Math.floor(Math.random()*messages.length)];
+document.getElementById("message").innerText = random;
+}
+
+function toggle(element){
+const hidden = element.querySelector(".hidden");
+hidden.style.display =
+hidden.style.display==="block" ? "none" : "block";
+}
+
+for(let i=0;i<120;i++){
+let star=document.createElement("div");
+star.className="star";
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+star.style.animationDelay=Math.random()*3+"s";
+document.getElementById("stars").appendChild(star);
+}
+
+</script>
+
+</body>
+</html>
+
